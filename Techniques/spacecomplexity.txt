@@ -1,0 +1,23 @@
+Difference between space used to solve the problem and the extra space used ? (eg. if an array is given in the question, and we use that array to solve the problem then the space used to solve the problem is O(n) whereas the extra space used is O(1)).
+
+Great question! Let's clarify the difference between the total space used to solve a problem and the extra space used:
+
+### Total Space Used
+- This includes all the memory used by the algorithm, including the input data and any additional space required for computation.
+- For example, if you have an array of size \(n\) and you use this array to solve the problem, the total space used is \(O(n)\).
+
+### Extra Space Used
+- This refers to the additional memory allocated by the algorithm beyond the input data.
+- It excludes the space taken by the input data itself.
+- For example, if you use an array of size \(n\) to solve the problem and you don't allocate any additional arrays or data structures, the extra space used is \(O(1)\).
+
+### Example
+Consider the problem of rotating an array:
+- **Total Space Used**: If the input array `nums` has \(n\) elements, the total space used is \(O(n)\) because the array itself takes \(O(n)\) space.
+- **Extra Space Used**: If you solve the problem in-place without using any additional arrays, the extra space used is \(O(1)\). However, if you use an additional array of size \(n\) to store the rotated elements, the extra space used is \(O(n)\).
+
+In summary:
+- **Total Space Used**: Includes the input data and any additional space required.
+- **Extra Space Used**: Only includes the additional space required beyond the input data.
+
+I hope this helps! If you have any more questions or need further clarification, feel free to ask.

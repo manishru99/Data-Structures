@@ -1,13 +1,17 @@
 import math
+#Requires a sorted array
 
 def jumpSearch(arr, x, n):
     step = math.sqrt(n)
 
     prev=0
-    while(arr[int(min(step,n)-1)] < x):
+    #As step can go greater than size(n) so min(step,n)
+    #-1 for arr index for position
+    #Jump through the arr to find the block containing the target
+    while(prev < n and arr[int(min(step,n)-1)] < x):
         prev = step
         step += math.sqrt(n)
-        if(prev>=n):
+        if(prev>=n):    #Target not present
             return -1
     
     while(arr[int(prev)] < x):

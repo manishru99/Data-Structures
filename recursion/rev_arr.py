@@ -1,4 +1,12 @@
 #Swap an array by recursion by using 2 pointers l and r
+
+#Number of recursive calls = n/2
+#Work done per call = O(1)
+#TC = O(n/2) = O(n)
+#SC = O(n/2) = O(n)
+
+#Same reason for both recursion depth is proportional to n/2
+
 def rev_arr(arr, n, l, r):
     #base
     if(l>=r):
@@ -8,11 +16,9 @@ def rev_arr(arr, n, l, r):
     #a[l] = a[r]
     #a[r] = temp
     # Swap elements using tuple unpacking
-    arr[l], arr[r] = arr[r], arr[l]
+    arr[l], arr[r] = arr[r], arr[l]    #O(1)
     # Recursive call
     rev_arr(arr, l+1, r-1)
-
-
 
 n= int(input("Size: "))
 a = []

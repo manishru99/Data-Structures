@@ -39,7 +39,10 @@ class Queue:
         if(self.isFull()):
             print("Full")
             return
-        self.rear = (self.rear + 1) % (self.capacity)
+        if self.rear == -1:
+            self.front = 0
+            self.rear = 0
+        else: self.rear = (self.rear + 1) % (self.capacity)
         self.Q[self.rear] = item
         self.size = self.size + 1
         print("% s enqueued to queue" %str(item))
@@ -51,8 +54,10 @@ class Queue:
         if(self.isEmpty()):
             print("Empty")
             return
-
-        print("% s dequeued from queue" % str(self.Q[self.front]))
+        if self.size == 1:
+            self.front = -1
+            self.rear = -1
+        else: print("% s dequeued from queue" % str(self.Q[self.front]))
         self.front = (self.front + 1) %(self.capacity)
         self.size = self.size - 1
 
@@ -60,7 +65,7 @@ class Queue:
     def que_front(self):
         if(self.isEmpty()):
             print("Queue is empty")
-        print("Rear item is:", self.Q[self.front])
+        print("Front item is:", self.Q[self.front])
 
     def que_rear(self):
         if(self.isEmpty()):
@@ -81,4 +86,24 @@ if __name__ == '__main__':
         
     
 
-
+'''
+2nd solution
+def __init__(self):
+        self.q=[]
+        
+    #Function to push an element x in a queue.
+    def push(self, x):
+         
+        #add code here
+        self.q.append(x)
+        return
+     
+    #Function to pop an element from queue and return that element.
+    def pop(self): 
+        n = len(self.q)
+        if n==0:
+            return -1
+        elem = self.q[0]
+        self.q.pop(0)
+        return elem
+'''

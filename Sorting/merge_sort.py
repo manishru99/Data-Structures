@@ -34,7 +34,7 @@ def merge(arr, low, mid, high):
         temp.append(arr[right])
         right += 1
     
-    #Copy elem from temp back to arr in original ppos
+    #Copy elem from temp back to arr in original pos
     for i in range(low, high+1):
         arr[i] = temp[i-low]
 
@@ -51,9 +51,10 @@ for i in range(n):
 arr = merge_sort(arr, 0, n-1)
 
 print("Array after sorting: ")
+
 for i in range(n):
     print(arr[i])
 
 
-#TC = O(n^2)  (worst and avg case)
-#TC = O(n)    (Best case)  
+#TC = O()  (worst and avg case)
+#TC = O()    (Best case)  

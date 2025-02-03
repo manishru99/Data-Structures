@@ -1,13 +1,14 @@
 #Swap an array by recursion by using 1 pointer a
+#TC = O(n)
+#SC = O(n)
 def rev_arr(arr, n, a):
     #base
     #if(a>=n//2):
     #    return
-    #swap logic
-    # Swap elements using tuple unpacking
-    if a >= n // 2:
+    if(a >= n // 2):
         return
     # Swap elements using tuple unpacking
+    #Swapping here done in constant time O(1)
     arr[a], arr[n - a - 1] = arr[n - a - 1], arr[a]
     # Recursive call
     rev_arr(arr, n, a + 1)

@@ -1,6 +1,8 @@
 # push the max to the last by adjacent swaps
+# Keywords: Maximum Last
 
 def bubble_sort(arr, n):
+    
     #outer loop runs from end to 1st index
     for i in range(n-1, 0, -1): 
         swapped = False
@@ -17,7 +19,14 @@ def bubble_sort(arr, n):
         if not swapped:
             break
         #This optimization can improve the TC in the best case to O(n) when the array is already sorted
-        #while the worst-case time complexity remains O(n^2)        
+        #while the worst-case time complexity remains O(n^2)
+        '''
+        # Another approach
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]    
+        '''
     return arr
 
 n = int(input("Size: "))

@@ -1,8 +1,9 @@
 #DFS using list data structure
 
-#TC =  O(V + E)
-#SC = O(V)
-
+#TC = O(V) + O(2E) = O(V + E)  where 2E is the summation of degrees
+#SC = O(V) + O(V) = O(V) visited list of size V 
+#and in worst case the stack space used by recursion will be V
+#eg. in case of skewed graph 1->2->3->4
 
 # Function to create an adjacency list from user input
 def create_graph(num_nodes, num_edges):
@@ -23,15 +24,19 @@ def create_graph(num_nodes, num_edges):
     return graph
 
 #Recursive DFS implementation
-def dfs_recursive(graph, node, visited):
+#def dfs_recursive(graph, node, visited):
+def dfs_recursive(graph, node, visited = None):    
     # Mark node as visited by adding to the visited list
+    # Initialize the visited list if it's the first call
+    if visited is None:
+        visited = []
     #For 1st time its the start node
     visited.append(node)  
     print(node, end = ' ')
 
     #Recur for all adjacent vertices
-    for neighbor in graph[node]:
-        if neighbor not in visited:        # Check if neighbor is not in the visited list
+    for neighbor in graph[node]:     #O(2E)
+        if neighbor not in visited:  # Check if neighbor is not in the visited list
             dfs_recursive(graph, neighbor, visited)
 
 def dfs_iterative(graph, s):
@@ -69,8 +74,9 @@ def main():
 
     # Run Recursive DFS
     print("\nDFS (Recursive):")
-    visited = [] # List to keep track of visited nodes
-    dfs_recursive(graph, start_node, visited)
+    #visited = [] # List to keep track of visited nodes
+    #dfs_recursive(graph, start_node, visited)
+    dfs_recursive(graph, start_node)
 
     # Run Iterative DFS
     print("\n\nDFS (Iterative):")

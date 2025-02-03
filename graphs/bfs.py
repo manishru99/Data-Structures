@@ -1,5 +1,7 @@
 from collections import deque
 
+#For BFS: Queue used
+
 # BFS from given source s
 def bfs(adj, s):
     # Create a queue for BFS
@@ -58,5 +60,7 @@ if __name__ == "__main__":
     bfs(adj, 0)
 
 
-    #TC = O(V+E)  -no of vertices+no of edges
-    #SC = O(V)
+    #TC = O(V) + O(2E) = O(V+E)  -no of vertices+no of edges
+    #For every node we traverse all the neighboring nodes
+    #i.e. for every node in queue inside for loop will run for the node's degree 
+    #SC = O(V) - queue + visited list + BFS list

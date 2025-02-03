@@ -1,9 +1,8 @@
-#New approach with 2 queues
-# FOr expalantion rfr chatgpt
-#Making push() operation costly.
-
 from collections import deque
 
+#Using TWO queues
+
+# Approach 1: Making push() operation costly.
 class StackWithQueues:
     def __init__(self):
         self.q1 = deque()  # Main queue for holding elements
@@ -70,10 +69,7 @@ stack.pop()        # Output: Popped 10 from the stack
 stack.pop()        # Output: Stack is empty. Cannot pop.
 
 
-
-
-#Making pop() operation costly.
-#code
+#Approach 2: Making pop() operation costly.
 '''
 from collections import deque
 
@@ -154,7 +150,51 @@ stack.pop()        # Output: Stack is empty. Cannot pop.
 
 '''
 
+'''
 
+Stack Using a SINGLE Queue:
+
+from collections import deque
+
+class StackUsingOneQueue:
+    def __init__(self):
+        self.queue = deque()
+
+    def push(self, item):
+        size = len(self.queue) #Size of queue is the moment before a new elem is pushed
+        self.queue.append(item)  # Add the new item to the queue
+        # Rotate the queue to make the new item the front element
+        for _ in range(size):      #loop runs from 0 till 2nd last elem as size was before adding the new elem 
+            self.queue.append(self.queue.popleft())
+        print(f"{item} pushed onto the stack")
+
+    def pop(self):
+        if self.isEmpty():
+            print("Stack is empty!")
+            return
+        item = self.queue.popleft()  # Remove the front element
+        print(f"{item} popped from the stack")
+
+    def top(self):
+        if self.isEmpty():
+            print("Stack is empty!")
+            return
+        print(f"Top element is: {self.queue[0]}")  # Front element is the top of the stack
+
+    def isEmpty(self):
+        return len(self.queue) == 0
+
+# Driver Code
+if __name__ == "__main__":
+    stack1 = StackUsingOneQueue()
+    stack1.push(10)
+    stack1.push(20)
+    stack1.push(30)
+    stack1.top()
+    stack1.pop()
+    stack1.top()
+
+'''
 
 
 

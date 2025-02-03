@@ -1,0 +1,33 @@
+1. Two Pointers
+The two pointers technique involves using two variables (pointers) to traverse a data structure, typically from opposite ends or at different speeds. This method helps simplify problems by reducing the need for nested loops.
+
+How It Works:
+Initialization: Place one pointer at the beginning and the other at the end of the array (or at different starting points based on the problem).
+Movement: Move the pointers towards each other or in the same direction until a specific condition is met.
+
+Common Use Cases:
+Finding pairs or triplets in a sorted array that sum to a target value.
+Reversing arrays or linked lists.
+Checking for palindromes by comparing characters from both ends.
+
+2. Sliding Window
+The sliding window technique is used to find a subarray or substring that meets a particular condition, such as achieving the maximum sum or minimum length. It involves maintaining a “window” over a portion of the array and moving it incrementally.
+
+Movement of left and right pointers
+EXPAND -> r
+SHRINK -> l
+
+How It Works:
+Initialization: Use two pointers to indicate the beginning and end of the window.
+Adjustment: Adjust the size of the window as needed while monitoring the required condition.
+
+Common Use Cases:
+Finding the maximum or minimum sum of a subarray with a fixed length.
+Identifying the smallest subarray that fulfills a certain condition.
+Counting unique elements or characters within a substring.
+
+Real-Life Applications:
+Both techniques are valuable in optimizing operations on contiguous sections of data:
+
+a. Two Pointers: Efficiently find pairs in a sorted array, check for palindromes, and merge sorted arrays.
+b. Sliding Window: Determine maximum or minimum subarray sums, find the smallest subarray meeting a condition, and count unique elements in a substring123.

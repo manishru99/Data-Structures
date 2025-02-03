@@ -16,7 +16,12 @@ def binary_search_iterative(arr, target):
     high = len(arr) - 1
 
     while low <= high:
+        #naive formula:
+        #can cause integer overflow if low and high are large numbers
         mid = (low + high) // 2
+        #For Overflow case:
+        #mid = low + (high - low)//2
+        #Python handles large integers natively, so overflow isn’t a concern
         if arr[mid] == target:
             return mid
         elif arr[mid] < target:
@@ -29,6 +34,11 @@ def binary_search_iterative(arr, target):
 #Recursive Binary Search
 #TC = O(log n)
 #SC = O(log n)
+#Recursive implementations of binary search can take O(log n) 
+# space due to the recursion stack.
+#For an array of size n, the number of divisions is log2n, 
+# which determines the maximum depth of the recursion stack.
+
 def binary_search_recursive(arr, target, low, high):
     if low > high:
         return -1

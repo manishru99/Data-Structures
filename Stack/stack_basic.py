@@ -2,7 +2,7 @@
 
 class Stack:
     def __init__(self):
-        self.stack=[]
+        self.stack=[]  #Linked list implementation of stack
     
     # Push an element onto the stack
     def push(self, e):
@@ -11,10 +11,14 @@ class Stack:
     # Pop an element from the stack (removes and returns the top element)
     def pop(self):
         if not self.is_empty():
-            return self.stack[-1]        #return self.items.pop() use this as it pops 
+            return self.stack.pop()        # use this as it pops 
         else:
             return "Stack is empty!"
-        
+        '''
+        if not self.stack:
+            return -1
+        return self.stack.pop()
+        '''
     # Peek at the top element of the stack (without removing it)
     def peek(self):
         if not self.is_empty():
